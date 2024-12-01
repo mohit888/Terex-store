@@ -1,0 +1,15 @@
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#inp{
+    width: 25%;
+    margin-left: 10%;
+}
+
+#search-button{
+    margin-left: 3%;
+}

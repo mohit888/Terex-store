@@ -1,0 +1,10 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.checks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
