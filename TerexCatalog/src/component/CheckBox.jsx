@@ -1,13 +1,10 @@
 import React from 'react'
-import { useState,useEffect} from 'react';
-import { useSearchParams,useLocation } from 'react-router-dom'
+import {useEffect} from 'react';
+import { useSearchParams} from 'react-router-dom'
 
 
 function CheckBox({heading,checkData,filterComponent}) {
-  console.log(checkData,filterComponent,"checkbox")
   const [searchParams, setSearchParams] = useSearchParams();
-  const data = checkData.map((item)=>filterComponent?.includes(item))
-  console.log(data,"coming form beta")
   const handleFilter= (heading,data)=>{
     if(filterComponent?.includes(data)){
         const updatedData = filterComponent.filter(col => col != data)

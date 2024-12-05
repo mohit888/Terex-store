@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { useSearchParams } from 'react-router-dom';
 import "../stylings/search.css"
 
-function Search({data}) {
+function Search() {
   const [searchParams,setSearchParams] = useSearchParams()
   const [searchData,setSearchData] = useState("")
 
