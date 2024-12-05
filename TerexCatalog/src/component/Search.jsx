@@ -22,7 +22,7 @@ function Search({data}) {
   }
   
   return (
-    <div className='search'>
+    <div className='search-button-container'>
         <input id ="inp" type='search' placeholder='search' onChange={(e)=>setSearchData(e.target.value)}></input>
         <button id ="search-button" onClick={handleOnClick}>search</button>
     </div>

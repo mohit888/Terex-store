@@ -4,18 +4,14 @@ import Cart from './component/Cart'
 import Navbar from './component/Navbar'
 import SortandFilter from './component/SortandFilter'
 import axios from "axios"
-import React, { Children, useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import Search from './component/Search'
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 
 
 
 function App() {
   const [data,setData] = useState([]);
-  const [cartData,setCartData] =useState([])
-  const handleCardata = (updatedCartData) =>{
-    setCartData(updatedCartData)
-  }
 
   const Layout = ({children}) => (
     <>
@@ -32,9 +28,6 @@ function App() {
     .catch(error => {
       console.log(error)
     })
-    if(localStorage.getItem("cart")){
-      setCartData(JSON.parse(localStorage.getItem("cart")))
-    }
   },[])
 
   return (
@@ -47,13 +40,13 @@ function App() {
               <Search data={data} />
               <div className='main'>
                 <SortandFilter data={data} />
-                <Catalog data={data} handleCardata={handleCardata} cartData={cartData} />
+                <Catalog data={data} />
               </div>
               </>
             </Layout>
           </>
         } />
-        <Route path="/cart" element={<Layout><Cart handleCardata={handleCardata} cartData={cartData} /> </Layout>} />
+        <Route path="/cart" element={<Layout><Cart data={data}/> </Layout>} />
       </Routes>
     </>
   )

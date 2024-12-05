@@ -4,9 +4,11 @@ import { useSearchParams,useLocation } from 'react-router-dom'
 
 
 function CheckBox({heading,checkData,filterComponent}) {
+  console.log(checkData,filterComponent,"checkbox")
   const [searchParams, setSearchParams] = useSearchParams();
+  const data = checkData.map((item)=>filterComponent?.includes(item))
+  console.log(data,"coming form beta")
   const handleFilter= (heading,data)=>{
-    console.log(filterComponent,'coming')
     if(filterComponent?.includes(data)){
         const updatedData = filterComponent.filter(col => col != data)
         updateUrlParams(heading.toLowerCase(), updatedData);
@@ -37,9 +39,9 @@ const updateUrlParams = (key, values) => {
     <div>
       <h3>{heading}</h3>
       <div className='checks'>
-        {checkData.map((item,index)=>(
+        {checkData?.map((item)=>(
             <label key = {item}>
-                <input type='checkbox' defaultChecked= {filterComponent?.includes(item)} value = {item} onClick={(e)=> handleFilter(heading,e.target.value)}></input>
+                <input type='checkbox' checked={filterComponent?.includes(item)} value = {item} onClick={(e)=> handleFilter(heading,e.target.value)}></input>
                 {item}
             </label>
         ))}

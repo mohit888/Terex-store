@@ -1,18 +1,63 @@
-.nav-1{
+/* Navbar Container */
+.nav-1 {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: linear-gradient(to right, #4CAF50, #2E7D32); /* Gradient background */
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 8px; /* Rounded corners */
 }
 
-.prod-name{
-
+/* Store Name */
+.prod-name h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    text-transform: uppercase; /* Makes the text modern */
 }
 
-#product {
-    padding-right: 20px;
+.prod-name h2:hover {
+    color: #C8E6C9; /* Light green hover effect */
 }
 
-.prod-cart{
+/* Cart Icon */
+.prod-cart {
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    background: #ffffff; /* White circular background */
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.prod-cart a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.prod-cart:hover {
+    background: #C8E6C9;
+    transform: scale(1.1);
+}
+
+.prod-cart a:hover {
+    color: #2E7D32;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-1 {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
 }

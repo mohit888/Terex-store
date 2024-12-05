@@ -1,63 +1,80 @@
-/* ProductCard.css */
-
 .card {
-    flex: 1 1 calc(25% - 16px);
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adjust to grid column size */
+    height: ;
     max-width: 300px;
-    background-color: #fff;
+    background: #ffffff;
+    border-radius: 15px; /* Softer rounded corners */
     overflow: hidden;
-    transition: transform 0.2s;
-    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Center-align content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Slight hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Elevated shadow on hover */
 }
 
+/* Card Image */
 .card-img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 220px; /* Consistent height for images */
+    object-fit: contain; /* Preserve image aspect ratio */
+    padding: 10px; /* Add some space around the image */
+    background-color: #f8f8f8; /* Neutral background for better contrast */
+    border-bottom: 1px solid #ddd; /* Subtle divider line */
 }
 
+/* Card Content */
 .card-content {
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between elements */
 }
 
 .card-title {
     font-size: 18px;
-    margin: 0 0 8px 0;
-    color: #333;
-}
-
-.card-description {
-    font-size: 14px;
-    color: #777;
-    margin: 0 0 16px 0;
+    font-weight: bold;
+    color: #333333; /* Dark text for readability */
+    margin: 0;
 }
 
 .card-price {
-    font-size: 16px;
-    color: #e74c3c;
-    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #e74c3c; /* Vibrant red for price */
+    font-weight: bold;
+    margin: 0;
 }
 
 .card-btn {
-    display: inline-block;
-    padding: 10px 16px;
-    background-color: #3498db;
-    color: #fff;
-    text-align: center;
-    border-radius: 4px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #4CAF50, #2E7D32); /* Fresh gradient for the button */
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
     text-decoration: none;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .card-btn:hover {
-    background-color: #2980b9;
+    background: linear-gradient(to right, #388E3C, #1B5E20); /* Darker hover gradient */
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+.errorContainer{
+    background-color: #ffebee; /* Light red background */
+    color: #d32f2f; /* Dark red text */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    animation: fadeOut 3s ease-in-out;
 }

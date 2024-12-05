@@ -1,7 +1,8 @@
 import React from 'react';
 import "../stylings/Cart.css"
 
-const CartItem = ({name,image,quantity,id,handleCardata}) => {
+const CartItem = ({name,image,quantity,id,price,totalQuantity,handleCardata}) => {
+  console.log(totalQuantity,"coming from itmecart")
   const updateQuantity = (e)=>{
     const localData = JSON.parse(localStorage.getItem("cart"))
     const updatedData = localData.map(item =>
@@ -24,15 +25,18 @@ const CartItem = ({name,image,quantity,id,handleCardata}) => {
         <div className="cart-item-details">
           <h3>{name}</h3>
           <div className="cart-item-controls">
+            <div>
             <span>Quantity: </span>
             <select className="quantity-dropdown" defaultValue={quantity} onChange={(e)=>updateQuantity(e)}>
-              {[...Array(10).keys()].map((num) => (
+              {[...Array(totalQuantity).keys()].map((num) => (
                 <option key={num + 1} value={num + 1}>
                   {num + 1}
                 </option>
               ))}
             </select>
             <button className="delete-button" onClick={removeItem}>Delete</button>
+            </div>
+            <h5>{price}</h5>
           </div>
         </div>
       </div>
